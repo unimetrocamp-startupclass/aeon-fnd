@@ -1,27 +1,96 @@
-# AeonFnd
+# Aeon — Front-end Web Application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.6.
+## Estrutura do Front-end
 
-## Development server
+O front-end da aplicação Aeon é construído com as seguintes tecnologias principais:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **TypeScript**
+- **Angular**
 
-## Code scaffolding
+A interface oferece acesso a diversas funcionalidades através de páginas dedicadas, incluindo:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Principais Funcionalidades
 
-## Build
+1. Edição de RGB **Segunda Etapa**
+   - Alteração de cores, efeitos, brilho e padrões.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+2. Criação de Macros **Segunda Etapa**
+   - Gravação de teclas e scripts personalizados.
 
-## Running unit tests
+3. Criação e Atualização de Layout **Em Produção**
+   - Seleção de teclas e sincronização com a porta COM/Criação do .keymap.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+4. Game de Digitação **Segunda Etapa**
+   - Jogo interativo com ranking dos 200 melhores usuários.
 
-## Running end-to-end tests
+5. Cadastro de Usuários **Em Produção**
+   - Registro e gerenciamento de perfis personalizados.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Arquitetura Técnica **Mais detalhes em [aeon-bkd](https://github.com/aeon-keyboard/aeon-bkd)**
 
-## Further help
+### Comunicação com Back-end
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+A aplicação web consome microserviços que interagem com um banco de dados PostgreSQL, permitindo persistência e recuperação eficiente de dados.
+
+### Serviços Principais
+
+- **KeymapService:** Gerencia keymaps personalizados em formato JSON.
+- **ConversionService:** Converte formatos JSON para protobuf e vice-versa.
+- **FirmwareManager:** Responsável por conexão com a porta COM e envio de firmware binário aos teclados Aeon.
+- **UserService:** Gestão de cadastros, logins e atualização de perfis.
+- **RankService:** Processamento e recuperação dos rankings dos usuários.
+- **GameService:** Controle do jogo de digitação, gerenciamento de pontos e registro de desempenho.
+
+### Infraestrutura
+
+- **Proxy Reverso:** Configurado para HTTPS seguro e gerenciamento da comunicação entre usuário e aplicação.
+- **Banco de Dados:** PostgreSQL para armazenamento seguro e estruturado.
+
+## Identidade Visual
+
+A identidade visual da Aeon reflete sofisticação e precisão, utilizando uma paleta de cores cuidadosamente selecionada:
+
+| Cor                 | Código HEX |
+|---------------------|------------|
+| Preto Profundo      | #0D0D0D    |
+| Branco Puro         | #FFFFFF    |
+| Branco Quente       | #F2F1EF    |
+| Dourado Clássico    | #FFD700    |
+| Dourado Envelhecido | #CCB338    |
+
+### Tipografia
+
+- **Principal:** Adrianna DemiBold
+- **Secundária:** Cormorant Garamond
+
+## Como executar o projeto
+
+### Pré-requisitos
+
+- Node.js
+- npm/yarn
+
+### Instalação
+
+```bash
+git clone https://github.com/seu-usuario/aeon-frontend.git
+cd aeon-frontend
+npm install
+```
+
+### Execução
+
+```bash
+ng serve
+```
+
+## Contribuição
+
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou pull requests para melhorias ou novas funcionalidades.
+
+## Licença
+
+Este projeto é licenciado sob a licença MIT — veja o arquivo [LICENSE](LICENSE) para detalhes.
+
+---
+Desenvolvido com sofisticação e precisão pela aeon.
