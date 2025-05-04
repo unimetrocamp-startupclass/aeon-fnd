@@ -3,7 +3,7 @@ import { Renderer2, RendererFactory2 } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { ThemeService, Theme } from './theme.service';
 
-fdescribe('ThemeService', () => {
+describe('ThemeService', () => {
     let service: ThemeService;
     let htmlEl: HTMLElement;
     let rendererSpy: jasmine.SpyObj<Renderer2>;

@@ -1,0 +1,35 @@
+@keyframes slideRight {
+    0% {
+        transform: translateX(-0.5rem);
+        filter: blur(3px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(0.5rem);
+        filter: blur(3px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+.slide-right {
+    animation: slideRight .35s ease-out forwards;
+}
+
+.slide-left {
+    animation: slideLeft .35s ease-out forwards;
+}
