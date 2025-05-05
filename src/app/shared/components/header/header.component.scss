@@ -1,0 +1,58 @@
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+}
+
+nav a {
+    position: relative;
+    font-size: 1rem;
+    transition: transform 0.3s ease-in-out, color 0.3s ease;
+    transform-origin: bottom center;
+    color: hsl(var(--foreground));
+    will-change: transform;
+}
+
+nav a.active {
+    letter-spacing: 1px;
+    transform: scale3d(1.08, 1.08, 1) translate(0, -1px);
+}
+
+nav {
+    --x: 0;
+    --w: 0;
+}
+
+nav .indicator {
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    height: 2px;
+    width: var(--w);
+    transform: translateX(var(--x));
+    background: radial-gradient(ellipse at center,
+            hsl(var(--primary)) 0%,
+            transparent 90%);
+    transition: transform .35s ease, width .35s ease;
+    pointer-events: none;
+    animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: .8;
+    }
+
+    50% {
+        opacity: .4;
+    }
+}

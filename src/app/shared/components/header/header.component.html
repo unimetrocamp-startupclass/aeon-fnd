@@ -1,0 +1,21 @@
+<header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-background/80 border-b border-border">
+    <div class="container flex items-center justify-center h-16 gap-8">
+        <!-- Logo -->
+        <a routerLink="/" class="logo p-4 flex-shrink-0">
+            <img [src]="logo$ | async" alt="Aeon Logo" class="h-10 w-auto" />
+        </a>
+
+        <!-- Navegação -->
+        <nav #nav class="nav flex items-center gap-6 relative" [style.--x]="xCss" [style.--w]="wCss">
+            <a *ngFor="let item of navItems" #link [routerLink]="item.path" routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }" (isActiveChange)="onActiveChange($event, link)"
+                class="relative transition-transform">
+                {{ item.name }}
+            </a>
+            <span class="indicator"></span>
+        </nav>
+
+        <!-- Toggle de tema -->
+        <app-theme-toggle class="p-4 flex-shrink-0" />
+    </div>
+</header>
