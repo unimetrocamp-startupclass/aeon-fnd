@@ -1,21 +1,27 @@
-<header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-background/80 border-b border-border">
-    <div class="container flex items-center justify-center h-16 gap-8">
+<header class="fixed inset-x-0 top-0 z-50 backdrop-blur-md bg-background/80 border-b border-border">
+    <div class="container mx-auto relative flex items-center h-16
+             justify-between gap-4 px-4
+             sm:gap-8 sm:justify-between
+             md:justify-center md:gap-8">
         <!-- Logo -->
-        <a routerLink="/" class="logo p-4 flex-shrink-0">
+        <a routerLink="/" class="logo p-4 flex-shrink-0 hidden sm:block">
             <img [src]="logo$ | async" alt="Aeon Logo" class="h-10 w-auto" />
         </a>
 
         <!-- Navegação -->
-        <nav #nav class="nav flex items-center gap-6 relative" [style.--x]="xCss" [style.--w]="wCss">
+        <nav #nav class="absolute inset-x-0 flex justify-center gap-4 sm:gap-6
+               md:static" [style.--x]="xCss" [style.--w]="wCss">
             <a *ngFor="let item of navItems" #link [routerLink]="item.path" routerLinkActive="active"
                 [routerLinkActiveOptions]="{ exact: true }" (isActiveChange)="onActiveChange($event, link)"
-                class="relative transition-transform">
-                {{ item.name }}
+                class="relative text-base overflow-visible">
+                <span class="label block transition-transform duration-300 origin-bottom">
+                    {{ item.name }}
+                </span>
             </a>
             <span class="indicator"></span>
         </nav>
 
-        <!-- Toggle de tema -->
-        <app-theme-toggle class="p-4 flex-shrink-0" />
+        <!-- Theme toggle -->
+        <app-theme-toggle class="p-2 sm:p-4 flex-shrink-0" />
     </div>
 </header>

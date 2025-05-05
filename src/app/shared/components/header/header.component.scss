@@ -1,17 +1,4 @@
-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 100%;
-}
-
-nav a {
+nav a .label {
     position: relative;
     font-size: 1rem;
     transition: transform 0.3s ease-in-out, color 0.3s ease;
@@ -20,9 +7,8 @@ nav a {
     will-change: transform;
 }
 
-nav a.active {
-    letter-spacing: 1px;
-    transform: scale3d(1.08, 1.08, 1) translate(0, -1px);
+nav a.active .label {
+    transform: scale3d(1.08, 1.08, 1) translateY(-1px);
 }
 
 nav {
