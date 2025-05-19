@@ -5,7 +5,7 @@ import { provideRouter } from '@angular/router';
 import { importProvidersFrom } from '@angular/core';
 
 import { LucideAngularModule, Moon, Sun, Zap, Palette, Layers, Keyboard, Download,
-    Github, ArrowRight } from 'lucide-angular';
+    Github, ArrowRight, Settings, Sliders, ShieldCheck } from 'lucide-angular';
 import { AppComponent } from './app/app.component';
 import { routes } from './app/app.routes';
 
@@ -15,7 +15,7 @@ bootstrapApplication(AppComponent, {
         provideHttpClient(),
         provideAnimations(),
         importProvidersFrom(
-            LucideAngularModule.pick({ Moon, Sun, Zap, Palette, Layers, Keyboard, Download, Github, ArrowRight }),
+            LucideAngularModule.pick({ Moon, Sun, Zap, Palette, Layers, Keyboard, Download, Github, ArrowRight, Settings, Sliders, ShieldCheck }),
         ),
     ],
 }).catch(err => console.error(err));

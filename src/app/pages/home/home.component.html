@@ -1,1 +1,102 @@
-<p>home works!</p>
+<section class="w-full py-20 md:py-32 lg:py-40 xl:py-56" aria-labelledby="hero-title">
+    <div class="container mx-auto px-4 md:px-6">
+        <div class="grid items-center gap-8 lg:grid-cols-[1fr_auto] xl:gap-16">
+            <div id="hero-text-content" class="flex flex-col justify-center space-y-6 opacity-0 animate-fade-in
+                    transition-opacity duration-1000 ease-in-out">
+                <h1 id="hero-title" class="text-4xl font-extrabold tracking-tight text-center sm:text-5xl md:text-6xl
+                     lg:text-left xl:text-7xl">
+                    Desbloqueie sua produtividade com <span class="text-gold">aeon</span>
+                </h1>
+
+                <p class="mx-auto max-w-xl text-center text-lg text-muted-foreground md:text-xl
+                    lg:mx-0 lg:text-left leading-relaxed">
+                    Um teclado personalizado desenvolvido para profissionais que exigem desempenho e estilo.
+                    Projetado com precisão e personalizável conforme suas necessidades.
+                </p>
+
+                <div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start">
+                    <a routerLink="/layout" class="group inline-flex items-center justify-center rounded-lg bg-gold px-8 py-3 font-semibold
+                              text-foreground dark:text-background shadow-md transition-all duration-300
+                              hover:bg-gold-darker hover:shadow-lg focus:outline-none
+                              focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2
+                              focus-visible:ring-offset-background">
+                        Customize seu Layout
+                        <lucide-arrow-right
+                            class="ml-2 h-5 w-5 transition-transform duration-200 group-hover:translate-x-1"
+                            aria-hidden="true"></lucide-arrow-right>
+                    </a>
+                </div>
+            </div>
+
+            <div id="hero-image-container" class="relative mx-auto aspect-[4/3] w-full max-w-md overflow-hidden
+                    rounded-xl shadow-2xl opacity-0 animate-fade-in
+                    transition-opacity duration-1000 ease-in-out delay-300
+                    lg:max-w-xl lg:aspect-square">
+                <img src="assets/logo_aeon_darkmode.svg"
+                    alt="Foto do meu BB lindao vai ficar aqui deste tamanho..............."
+                    class="h-full w-full object-contain" loading="lazy" />
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="features" class="w-full py-16 md:py-24 lg:py-32 bg-muted" aria-labelledby="features-title">
+    <div class="container mx-auto px-4 md:px-6">
+        <div class="flex flex-col items-center justify-center space-y-6 text-center mb-12 md:mb-16">
+            <div class="inline-block rounded-lg bg-gold/10 px-3 py-1 text-sm font-medium text-gold">
+                Diferenciais
+            </div>
+            <h2 id="features-title" class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+                Por que montar o aeon?
+            </h2>
+            <p class="max-w-3xl text-lg text-muted-foreground md:text-xl/relaxed">
+                Descubra os recursos que tornam nosso teclado a escolha ideal para otimizar seu fluxo de trabalho
+                com conforto e personalização.
+            </p>
+        </div>
+
+        <div
+            class="mx-auto grid max-w-5xl items-stretch gap-8 py-12 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-12">
+            <div
+                class="flex flex-col h-full space-y-4 rounded-xl bg-background p-6 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                <div class="flex h-12 w-12 items-center justify-center rounded-full bg-gold text-background">
+                    <lucide-icon name="settings" class="h-6 w-6" aria-hidden="true"></lucide-icon>
+                </div>
+                <div class="space-y-2">
+                    <h3 class="text-xl font-semibold text-foreground">Design Ergonômico</h3>
+                    <p class="text-muted-foreground leading-relaxed">
+                        Layout dividido para reduzir o esforço e melhorar o conforto durante longas sessões de
+                        digitação.
+                    </p>
+                </div>
+            </div>
+
+            <div
+                class="flex flex-col h-full space-y-4 rounded-xl bg-background p-6 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                <div class="flex h-12 w-12 items-center justify-center rounded-full bg-gold text-background">
+                    <lucide-icon name="sliders" class="h-6 w-6" aria-hidden="true"></lucide-icon>
+                </div>
+                <div class="space-y-2">
+                    <h3 class="text-xl font-semibold text-foreground">Completamente Customizável</h3>
+                    <p class="text-muted-foreground leading-relaxed">
+                        Crie o layout perfeito com nosso editor intuitivo e múltiplas camadas programáveis.
+                    </p>
+                </div>
+            </div>
+
+            <div
+                class="flex flex-col h-full space-y-4 rounded-xl bg-background p-6 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                <div class="flex h-12 w-12 items-center justify-center rounded-full bg-gold text-background">
+                    <lucide-icon name="shield-check" class="h-6 w-6" aria-hidden="true"></lucide-icon>
+                </div>
+                <div class="space-y-2">
+                    <h3 class="text-xl font-semibold text-foreground">Materiais Premium</h3>
+                    <p class="text-muted-foreground leading-relaxed">
+                        Construído com componentes de alta qualidade para durabilidade e uma experiência de
+                        digitação satisfatória.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

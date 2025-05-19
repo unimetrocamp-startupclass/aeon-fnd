@@ -1,22 +1,45 @@
-import { Component } from '@angular/core';
-import { ButtonComponent, CardComponent } from '../../shared';
+import {
+    AfterViewInit,
+    ChangeDetectionStrategy,
+    Component,
+    ElementRef,
+    ViewChild
+} from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { LucideAngularModule } from 'lucide-angular';
+import { RouterLink } from '@angular/router';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 @Component({
-  standalone: true,
-  selector: 'app-home',
-  imports: [ButtonComponent, CardComponent],
-  template: `
-  <section class="min-h-screen flex flex-col items-center justify-center gap-12">
-    <h1 class="text-4xl font-bold text-center">Bem‑vindo ao teclado split!</h1>
-
-    <ui-card class="max-w-lg text-center">
-      <p class="mb-6">Projeto em migração de React para Angular <strong>100 % TypeScript</strong>.</p>
-      <ui-button (click)="toggleTheme()">Alternar tema</ui-button>
-    </ui-card>
-  </section>
-  `
+    standalone: true,
+    selector: 'app-home',
+    templateUrl: './home.component.html',
+    styleUrls: ['./home.component.scss'],
+    imports: [
+        RouterLink,
+        CommonModule,
+        LucideAngularModule,
+    ],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HomePage {
-  constructor(private theme: ThemeService) {}
-  toggleTheme() { this.theme.toggle(); }
+export class HomeComponent implements AfterViewInit {
+    @ViewChild('hero', { static: true }) heroRef!: ElementRef<HTMLElement>;
+    @ViewChild('text', { static: true }) textRef!: ElementRef<HTMLElement>;
+
+    ngAfterViewInit(): void {
+        const observer = new IntersectionObserver(
+            entries =>
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-fade-in');
+                    }
+                }),
+            { threshold: 0.1 }
+        );
+
+        [this.heroRef.nativeElement, this.textRef.nativeElement].forEach(el =>
+            observer.observe(el)
+        );
+    }
 }
