@@ -12,6 +12,53 @@ body {
     }
 }
 
+@layer components {
+    .link-underline {
+      --underline-height: 2px;
+      --underline-offset: -4px;
+      --underline-color: hsl(var(--primary));
+    }
+
+    .link-underline {
+      @apply relative inline-flex items-center
+             transition-colors duration-300;
+    }
+    .link-underline::after {
+      content: "";
+      pointer-events: none;
+      position: absolute;
+      left: 0;
+      bottom: var(--underline-offset);
+      height: var(--underline-height);
+      width: 0;
+      display: block;
+      background: radial-gradient(
+        ellipse at center,
+        var(--underline-color) 0%,
+        transparent 70%
+      );
+      opacity: .8;
+      transition:
+        width .35s ease,
+        opacity .35s ease;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    .link-underline:hover,
+    .link-underline:focus-visible {
+      @apply text-primary;
+    }
+    .link-underline:hover::after,
+    .link-underline:focus-visible::after {
+      width: 100%;
+    }
+  }
+
+@keyframes pulse {
+    0%, 100% { opacity: .8; }
+    50%      { opacity: .4; }
+  }
+
 @layer base {
     :root {
         --background: 0 0% 100%;

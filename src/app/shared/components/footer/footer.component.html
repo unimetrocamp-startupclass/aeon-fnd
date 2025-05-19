@@ -1,0 +1,117 @@
+<footer class="bg-background text-foreground border-t border-border/50 shadow-sm">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+
+      <!-- Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 md:gap-12">
+
+        <!-- Branding -->
+        <div class="md:col-span-1 lg:col-span-2">
+          <a routerLink="/" aria-label="Página Inicial da aeon" class="inline-flex items-center mb-4 group">
+            <img
+              [src]="logo$ | async"
+              alt="Logotipo Aeon"
+              class="w-10 h-10 mr-3 text-primary group-hover:opacity-80 transition-opacity duration-300"
+            />
+            <span class="text-2xl font-bold group-hover:text-primary transition-colors duration-300">
+              aeon
+            </span>
+          </a>
+
+          <p class="text-muted-foreground text-sm leading-relaxed mb-6">
+            Do desenho da PCB ao último pixel da interface web, aeon é open-source,
+            modular e feito com as melhores tecnologias para impulsionar seus projetos.
+          </p>
+
+          <!-- GitHub -->
+          <div class="flex space-x-4">
+            <a
+              href="https://github.com/aeon-keyboard"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Aeon no GitHub"
+              class="text-muted-foreground hover:text-primary transition-colors duration-300"
+              title="GitHub"
+            >
+              <lucide-icon name="github" class="w-6 h-6"></lucide-icon>
+            </a>
+          </div>
+        </div>
+
+        <!-- Navegation -->
+        <div class="md:col-span-1">
+          <h3 class="text-lg font-semibold mb-5">Navegação</h3>
+          <ul class="space-y-3">
+            <li>
+              <a
+                routerLink="/"
+                class="flex items-center group text-muted-foreground hover:text-primary underline-offset-4 transition-colors duration-300">
+                <lucide-icon
+                  name="arrow-right"
+                  class="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                ></lucide-icon>
+                <span class="link-underline">Home</span>
+              </a>
+            </li>
+
+            <li>
+              <a routerLink="/about" class="flex items-center group text-muted-foreground hover:text-primary underline-offset-4 transition-colors duration-300">
+                <lucide-icon name="arrow-right" class="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></lucide-icon>
+                <span class="link-underline">Sobre</span>
+              </a>
+            </li>
+
+            <li>
+              <a routerLink="/layout" class="flex items-center group text-muted-foreground hover:text-primary underline-offset-4 transition-colors duration-300">
+                <lucide-icon name="arrow-right" class="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></lucide-icon>
+                <span class="link-underline">Editor de Layout</span>
+              </a>
+            </li>
+
+            <li>
+              <a routerLink="/tutorial" class="flex items-center group text-muted-foreground hover:text-primary underline-offset-4 transition-colors duration-300">
+                <lucide-icon name="arrow-right" class="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></lucide-icon>
+                <span class="link-underline">Tutorial</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Documentation -->
+        <div class="md:col-span-1">
+          <h3 class="text-lg font-semibold mb-5">Recursos</h3>
+          <ul class="space-y-3">
+            <li>
+              <a
+                href="https://github.com/orgs/aeon-keyboard/repositories"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center group text-muted-foreground hover:text-primary underline-offset-4 transition-colors duration-300 "
+              >
+                <lucide-icon name="arrow-right" class="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></lucide-icon>
+                <span class="link-underline">Repositórios</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="border-t border-border/50 mt-10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm">
+        <p class="text-muted-foreground mb-4 md:mb-0">
+          &copy; {{ year }} aeon. Todos os direitos reservados.
+        </p>
+
+        <div class="flex flex-wrap justify-center gap-x-6 gap-y-2">
+          <a routerLink="/privacy" class="text-muted-foreground hover:text-primary underline-offset-4 transition-colors duration-300 link-underline">
+            Política de Privacidade
+          </a>
+          <a routerLink="/terms" class="text-muted-foreground hover:text-primary underline-offset-4 transition-colors duration-300 link-underline">
+            Termos de Uso
+          </a>
+          <a href="mailto:contact@brainx.dev" class="text-muted-foreground hover:text-primary underline-offset-4 transition-colors duration-300 link-underline">
+            Contato
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
