@@ -1,0 +1,49 @@
+<div class="bg-card rounded-lg shadow p-4">
+    <h3 class="text-lg font-medium mb-4">Key Configuration</h3>
+
+    <div *ngIf="!selectedKey" class="text-center py-6 text-muted-foreground">
+        <p>teste compontente</p>
+    </div>
+
+    <form *ngIf="selectedKey" [formGroup]="configForm" (ngSubmit)="onSubmit()">
+        <div class="space-y-4">
+            <div class="form-group">
+                <label for="label" class="block text-sm font-medium mb-1">Key Label</label>
+                <input type="text" id="label" formControlName="label"
+                    class="w-full p-2 rounded border border-input bg-background" placeholder="Enter key label" />
+            </div>
+
+            <div class="form-group">
+                <label for="action" class="block text-sm font-medium mb-1">Action</label>
+                <select id="action" formControlName="action"
+                    class="w-full p-2 rounded border border-input bg-background">
+                    <option value="">Select an action</option>
+                    <option value="keypress">Keypress</option>
+                    <option value="layer">Layer Switch</option>
+                    <option value="Miscellaneous">Miscellaneous</option>
+                    <option value="Hold-Tap">Hold-Tap</option>
+                    <option value="Mod-Morph">Mod-Morph</option>
+                    <option value="macro">Macro</option>
+                    <option value="Key Toggle">Key Toggle</option>
+                    <option value="Sticky Key">Sticky Key</option>
+                    <option value="Sticky Layer">Sticky Layer</option>
+                    <option value="Tap-Dance">Tap-Dance</option>
+                    <option value="Caps Word">Caps Word</option>
+                    <option value="Key Repeat">Key Repeat</option>
+                    <option value="Sensor Rotation">Sensor Rotation</option>
+                    <option value="Mouse Emulation">Mouse Emulation</option>
+                </select>
+            </div>
+
+            <!-- Add more form fields based on your requirements -->
+
+            <div class="pt-4">
+                <button type="submit"
+                    class="w-full py-2 px-4 bg-primary text-primary-foreground rounded hover:bg-primary/90"
+                    [disabled]="configForm.invalid">
+                    Save Configuration
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

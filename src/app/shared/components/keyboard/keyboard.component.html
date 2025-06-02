@@ -1,0 +1,33 @@
+<div class="bg-card rounded-lg shadow p-4">
+    <h3 class="text-lg font-medium mb-4">Layer {{ currentLayer() }} Layout</h3>
+    <div class="flex space-x-2">
+        <button *ngFor="let layer of layers; trackBy: trackByLayer" class="btn" [ngClass]="{
+      'btn-primary': currentLayer() === layer,
+      'btn-outline': currentLayer() !== layer
+    }" (click)="setCurrentLayer(layer)">
+            {{ layer }}
+        </button>
+    </div>
+    <div class="keyboard-container">
+        <div class="keyboard-layout grid grid-cols-15 gap-1">
+            <div *ngFor="let key of keys"
+                class="keyboard-key relative p-2 rounded border text-center cursor-pointer transition-colors" [ngClass]="{
+               'bg-prima    ry text-primary-foreground': isKeySelected(key.id),
+               'bg-muted hover:bg-muted/80': !isKeySelected(key.id)
+             }" [ngStyle]="{
+               'grid-row': key.row + 1,
+               'grid-column': key.col + 1,
+               'grid-row-end': 'span ' + key.height,
+               'grid-column-end': 'span ' + key.width
+             }" (click)="onKeyClick(key.id)">
+                {{ key.label }}
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-4 text-sm text-muted-foreground">
+        <p>Current Layer: {{ currentLayer() }}</p>
+        <p *ngIf="selectedKey()">Selected Key: {{ selectedKey() }}</p>
+        <p *ngIf="!selectedKey()">No key selected</p>
+    </div>
+</div>

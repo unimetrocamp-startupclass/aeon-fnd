@@ -1,0 +1,47 @@
+<!-- Layer Selection ------------------------------------------------------->
+<section class="py-4 pt-32 pb-8 px-4">
+    <div class="container mx-auto">
+        <div class="flex items-center justify-between max-w-3xl mx-auto mb-8">
+            <span class="text-lg font-medium">Layer Selection:</span>
+
+            <div class="flex space-x-2">
+                <button *ngFor="let layer of layers" class="btn" [ngClass]="{
+              'btn-primary' : currentLayer() === layer,
+              'btn-outline' : currentLayer() !== layer
+            }" (click)="setCurrentLayer(layer)">
+                    {{ layer }}
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Editor Layout --------------------------------------------------------->
+<section class="py-8 px-4">
+    <div class="container mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            <!-- Sidebar -->
+            <div class="lg:col-span-2">
+                <app-sidebar [activeTab]="activeTab()" (tabChange)="setActiveTab($event)"
+                    (exportLayout)="exportLayout()" (importLayout)="importLayout()">
+                </app-sidebar>
+            </div>
+
+            <!-- Main content -->
+            <div class="lg:col-span-10 space-y-8">
+                <!-- Teclado + painel de configuração -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Teclado -->
+                    <app-keyboard [layer]="currentLayer()" [selected]="selectedKey()" (keyClick)="keyClicked($event)">
+                    </app-keyboard>
+
+                    <!-- Painel de configuração -->
+                    <div class="lg:col-span-10 space-y-8">
+                        <app-key-config-panel [selectedKey]="selectedKey()" (saveConfig)="saveKeyConfig($event)">
+                        </app-key-config-panel>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

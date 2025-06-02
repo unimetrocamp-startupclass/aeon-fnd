@@ -1,0 +1,30 @@
+<!-- simulator-panel.component.html -->
+<div class="bg-card rounded-lg shadow p-4">
+    <h3 class="text-lg font-medium mb-4">Simulator</h3>
+
+    <div class="space-y-4">
+      <div class="simulator-controls">
+        <button
+          class="py-2 px-4 bg-primary text-primary-foreground rounded hover:bg-primary/90"
+          (click)="runSimulation()">
+          Run Simulation
+        </button>
+
+        <button
+          class="py-2 px-4 ml-2 bg-secondary text-secondary-foreground rounded hover:bg-secondary/90"
+          (click)="clearLog()">
+          Clear Log
+        </button>
+      </div>
+
+      <div class="simulator-log bg-muted/30 p-3 rounded h-64 overflow-y-auto border border-input font-mono text-sm">
+        <div *ngIf="simulationLog.length === 0" class="text-muted-foreground">
+          Simulation log will appear here...
+        </div>
+
+        <div *ngFor="let entry of simulationLog" class="log-entry">
+          {{ entry }}
+        </div>
+      </div>
+    </div>
+  </div>

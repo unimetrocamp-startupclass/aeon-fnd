@@ -1,0 +1,31 @@
+<div class="bg-card rounded-lg shadow p-4">
+    <h3 class="text-lg font-medium mb-4">Tools</h3>
+
+    <div class="space-y-2">
+        <button *ngFor="let tab of tabs; trackBy: trackByTab" class="w-full text-left p-2 rounded transition-colors"
+            [ngClass]="{
+          'bg-primary text-primary-foreground': activeTab === tab,
+          'hover:bg-muted' : activeTab !== tab
+        }" (click)="setActiveTab(tab)">
+            {{ tab | titlecase }}
+        </button>
+    </div>
+
+    <div class="mt-6 pt-6 border-t border-border">
+        <h3 class="text-lg font-medium mb-4">Layout</h3>
+
+        <div class="space-y-2">
+            <button
+                class="w-full flex items-center justify-center p-2 bg-primary text-primary-foreground rounded hover:bg-primary/90"
+                (click)="onExport()">
+                Export Layout
+            </button>
+
+            <button
+                class="w-full flex items-center justify-center p-2 bg-secondary text-secondary-foreground rounded hover:bg-secondary/90"
+                (click)="onImport()">
+                Import Layout
+            </button>
+        </div>
+    </div>
+</div>

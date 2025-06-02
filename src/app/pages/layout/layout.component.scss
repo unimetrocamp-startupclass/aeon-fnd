@@ -1,0 +1,20 @@
+/* layout.component.scss */
+.grid-cols-15 {
+    grid-template-columns: repeat(15, minmax(0, 1fr));
+  }
+
+  .keyboard-container {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+     .keyboard-layout {
+    min-width: 900px;
+  }
+
+  .keyboard-key {
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
